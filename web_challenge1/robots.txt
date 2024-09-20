@@ -1,0 +1,3 @@
+# Robots.txt
+# You might want to check hidden files :)
+Disallow: /a8j31.js
