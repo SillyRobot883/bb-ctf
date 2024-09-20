@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Access</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+<div class="container">
+    <h1>🔒 Welcome to the Secure Area 🔒</h1>
+    <p id="message" class="info">You must log in to access admin features. 🚪</p>
+    <button id="get-flag-btn" class="disabled" disabled>🚀 Get Flag</button>
+    <p id="flag" style="display: none;"></p>
+</div>
+</body>
+</html>
