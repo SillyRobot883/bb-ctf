@@ -1,7 +1,4 @@
-FROM nginx:alpine
+FROM ubuntu:latest
+LABEL authors="azooz"
 
-# Copy the challenge files to the container
-COPY . /usr/share/nginx/html
-
-# Expose the port for the challenge
-EXPOSE 8001
+ENTRYPOINT ["top", "-b"]
