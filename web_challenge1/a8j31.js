@@ -1,3 +1,3 @@
 
-// You really an inspector gadget! Here is the 3rd part of the flag:
-console.log("_clu3s}");
+// That was easy, wasn't it? Here is the 3rd part of the flag:
+console.log("FLAG3: _clu3s} ");

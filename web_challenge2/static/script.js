@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const message = document.getElementById("message");
     const flag = document.getElementById("flag");
 
-    // Function to get the value of a specific cookie
     function getCookie(name) {
         let cookieArr = document.cookie.split(";");
         for (let i = 0; i < cookieArr.length; i++) {
@@ -22,8 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (isAdmin === "true") {
             message.textContent = "Welcome, Admin! You can now get the flag.";
             getFlagBtn.disabled = false;
-            getFlagBtn.classList.remove("disabled"); // Remove the disabled class
-
+            getFlagBtn.classList.remove("disabled");
             getFlagBtn.addEventListener("click", function() {
                 fetch('/admin', {
                     method: 'POST',
@@ -44,10 +42,10 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         } else {
             message.textContent = "Sorry, this feature is only available for admins.";
-            getFlagBtn.classList.add("disabled"); // Keep the disabled class
+            getFlagBtn.classList.add("disabled");
         }
     } else {
         message.textContent = "No access detected. Please log in first.";
-        getFlagBtn.classList.add("disabled"); // Keep the disabled class
+        getFlagBtn.classList.add("disabled");
     }
 });

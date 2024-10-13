@@ -8,7 +8,7 @@ load_dotenv()
 
 app = Flask(__name__)
 
-# Simulated user database
+# Local storage for user data
 users = {}
 
 @app.route('/')
@@ -22,7 +22,6 @@ def register():
         username = request.form['username']
         password = request.form['password']
 
-        # Disallow registration for specific usernames
         if username.lower() in ["admin", "administrator"]:
             error = "Sorry, we've disabled admin registration at the moment."
         else:
@@ -37,7 +36,6 @@ def login():
         username = request.form['username']
         password = request.form['password']
         if username in users and users[username] == password:
-            # Create isAdmin cookie (false by default)
             isAdmin_value = f"{username}:false"
             response = make_response(redirect(url_for('index')))
             response.set_cookie('isAdmin', base64.b64encode(isAdmin_value.encode()).decode())
@@ -62,7 +60,6 @@ def get_flag():
 
 @app.route('/set_admin/<username>')
 def set_admin(username):
-    # Simulate setting admin for a user (for testing)
     isAdmin_value = f"{username}:true"
     response = make_response(redirect(url_for('index')))
     response.set_cookie('isAdmin', base64.b64encode(isAdmin_value.encode()).decode())

@@ -1,0 +1,18 @@
+body {
+    background-color: #282c34; /* Background color */
+    color: white; /* Text color for hints */
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* Hide the flag by matching the background color */
+.flag {
+    color: #282c34; /* Same color as background */
+    user-select: text; /* Allow text selection */
+    text-shadow: 0 0 0.1em #282c34; /* Blend with background */
+}
+
+/* Hint styling */
+.hint {
+    margin: 20px 0;
+}
